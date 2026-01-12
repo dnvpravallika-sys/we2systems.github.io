@@ -1053,7 +1053,7 @@
           return;
         }
 
-        // check if submit button is enabled (captcha validated)
+        // check if submit button is enabled
         const submitBtn = document.getElementById('submitBtn');
         if (submitBtn.disabled) {
           const err = document.getElementById('captchaError');
@@ -1072,8 +1072,7 @@
         };
 
         try {
-          // Use form-urlencoded to avoid CORS preflight with Google Apps Script
-          // (Apps Script webapps do not send CORS preflight headers for application/json)
+          
           const url = "https://script.google.com/macros/s/AKfycbyJfyADDi8ddpwccnRH4RsLcNLIuIRsUT9iCZ8TuMLxYr0KKlonfkMymLyvcN7tJQvQ/exec";
           const formBody = new URLSearchParams();
           formBody.append('name', data.name);
